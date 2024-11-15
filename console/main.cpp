@@ -3,29 +3,24 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-
-
+#include <chrono>
+#include <ctime>
+#include <iomanip> 
+#include<sstream>
 
 //using namespace std;// 命名空间声明,不过现在注释掉了，所以会有一堆std::
-
-
 
 //宏定义
 #define _CRT_SECURE_NO_WARNINGS 1// 取消VS2022的警告
 
-
-
 //全局变量
-
-
 
 
 //函数声明
 int searchByTime();// 按时间段搜索
 int searchByName(); // 按名字搜索
+int pastDays();//那年今日
 std::string searchContentInFile(const std::filesystem::path filePath,const std::string content);// 在文件中搜索指定内容
-
-
 
 
 //函数实现
@@ -63,6 +58,26 @@ int searchByName() {
 }
 
 
+int pastDays() {
+	auto now = std::chrono::system_clock::now();
+	std::time_t now_time_t = std::chrono::system_clock::to_time_t(now);// 转换为 time_t
+	std::tm now_tm = *std::localtime(&now_time_t);// 将 time_t 转换为 std::tm 结构
+	std::ostringstream trans;
+	trans << std::put_time(&now_tm, "%m%d");//转换
+
+	std::filesystem::path filePath = std::filesystem::current_path();
+	std::string today=searchContentInFile(filePath,trans.str());
+
+	if (today != "0"){
+		std::cout<<"那年今天："<<today<<std::endl;
+		return 1;
+	}
+
+	return 0;
+}
+
+
+
 std::string searchContentInFile(const std::filesystem::path filePath,const std::string content) {
 	std::filesystem::path filePath_txt = filePath / "lib.txt"; // 拼接文件路径
 	std::ifstream file(filePath_txt.string()); // 打开文件
@@ -86,6 +101,9 @@ std::string searchContentInFile(const std::filesystem::path filePath,const std::
 
 
 int main() {
+	if (pastDays() == 1) {
+		std::cout << "为什么不去看下发生过什么？" << std::endl;
+	}
 	std::cout << "type 1: 按时间段搜索" << std::endl;
 	std::cout << "type 2: 按名字" << std::endl;
 	std::cout << ">";

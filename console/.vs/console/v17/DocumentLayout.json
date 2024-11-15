@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Code\\repo\\photoReader\\console\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D06153E3-1F29-4C09-8A6F-4FBF1A577FD3}|console.vcxproj|D:\\Code\\repo\\photoReader\\console\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D06153E3-1F29-4C09-8A6F-4FBF1A577FD3}|console.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\Code\\repo\\photoReader\\console\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "D:\\Code\\repo\\photoReader\\console\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AQIAAFoAAAAAAAAAAAAAAEUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-12T09:37:49.824Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
